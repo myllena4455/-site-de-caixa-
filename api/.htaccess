@@ -1,4 +1,13 @@
+<IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteBase /api/
+
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^ index.php [L]
+
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Corrige perda de conteúdo JSON no InfinityFree
+RewriteCond %{HTTP:Content-Type} application/json
+RewriteRule .* - [E=ENABLE_JSON:1]
+</IfModule>

@@ -5,10 +5,10 @@ class DB {
     public static function pdo(): PDO {
         static $pdo = null;
         if ($pdo) return $pdo;
-        $host = getenv('DB_HOST') ?: 'sqlXXX.epizy.com'; // substitua
-        $db   = getenv('DB_NAME') ?: 'epiz_xxxxxx_app';
-        $user = getenv('DB_USER') ?: 'epiz_xxxxxx';
-        $pass = getenv('DB_PASS') ?: 'SUA_SENHA_AQUI';
+        $host = 'sql212.infinityfree.com';      // MySQL Hostname
+        $db   = 'if0_40131870_lkimports';       // MySQL Database Name
+        $user = 'if0_40131870';                 // MySQL Username
+        $pass =  'myllena1234567';               // MySQL Password
         $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
         $opts = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

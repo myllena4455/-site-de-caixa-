@@ -10,6 +10,8 @@
     --color-card-bg: #ffffff;
     --color-border: #dddddd;
 }
+RewriteRule . - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
 
 /* Geral e Reset */
 * {
